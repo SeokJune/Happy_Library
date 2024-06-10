@@ -1,6 +1,15 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,eclipse,intellij,java,vue,vuejs
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,eclipse,intellij,java,vue,vuejs
 
+### Tomcat & JDK Folder ###
+apache-tomcat-8.0.53/
+jdk1.8.0_181/
+### Files & Folders ###
+newdeal2024/
+Servers/
+remoteSystemsTempFiles/
+target/
+
 ### Eclipse ###
 .metadata
 bin/
@@ -284,10 +293,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-### Tomcat ###
-apache-tomcat-9.0.89/
 
-### JDK exe ###
-jdk-8u411-windows-x64.exe
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,eclipse,intellij,java,vue,vuejs

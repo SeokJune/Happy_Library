@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DispatcherServlet Context: 클라이언트로부터 들어오는 모든 요청을 받아 해당 요청을 처리하기 위해 적절한 컨트롤러(Controller)에 전달하는 중심적인 서블릿 -->
+<beans:beans xmlns="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Spring MVC의 @Controller 프로그래밍 모델을 활성화 -->
+	<annotation-driven />
+
+	<!-- 파일 업로드를 처리하기 위한 StandardServletMultipartResolver 빈을 정의 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+		<!-- 별도의 속성 설정이 필요하지 않음 -->
+	</beans:bean>
+
+	<!-- 지정된 패키지 및 하위 패키지에서 @Controller, @Service, @Repository 등의 어노테이션이 붙은 클래스를 자동으로 스캔하여 빈으로 등록 -->
+	<context:component-scan base-package="com.sample.controllers" />
+	<context:component-scan base-package="com.sample.config" />
+
+	<!-- 요청 처리 전/후에 실행되는 인터셉터를 정의 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/**" />
+			<!-- <exclude-mapping path="/xxx" /> -->
+			<beans:bean class="com.happy.library.common.interceptor.AuthCheckInterceptor" />
+		</interceptor>
+	</interceptors>
+</beans:beans>

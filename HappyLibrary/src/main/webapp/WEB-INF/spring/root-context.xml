@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root Context: spring 웹 애플리케이션의 전반적인 설정과 공유 리소스를 정의, 이 파일에 정의된 빈(bean)은 해당 웹 애플리케이션의 모든 컴포넌트에서 공유하여 사용 -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- context:component-scan: 지정된 패키지에서 컴포넌트를 찾아 빈(bean)으로 등록하는 설정 -->
+	<context:component-scan base-package="com.sample.repositories" />
+	<context:component-scan base-package="com.sample.services" />
+	<import resource="classpath:com/happy/library/config/DataSourceConfig.java" />
+
+	<!-- tx:annotation-driven: Spring의 어노테이션 기반 트랜잭션 처리를 사용하기 위한 설정 -->
+	<tx:annotation-driven />
+
+	<!-- multipartResolver: 파일 업로드를 처리하기 위한 빈(bean) -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+		<!-- 별도의 속성 설정이 필요하지 않음 -->
+	</bean>
+</beans>

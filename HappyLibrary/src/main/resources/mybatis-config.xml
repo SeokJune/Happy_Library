@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 로그 구현체 설정 (Log4j2 사용) -->
+	<settings>
+		<setting name="logImpl" value="LOG4J2" />
+		<!-- 자동 매핑을 엄격하게 설정 -->
+		<setting name="autoMappingBehavior" value="STRICT" />
+		<!-- JDBC 타입이 null인 컬럼을 무시 -->
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<!-- 캐시의 사용을 활성화 -->
+		<setting name="cacheEnabled" value="true" />
+		<!-- 매퍼 메서드의 결과가 null인 경우의 처리 -->
+		<setting name="callSettersOnNulls" value="true" />
+		<!-- 모든 쿼리 실행 전 파라미터를 로그에 출력 -->
+		<setting name="logPrefix" value="MyBatis-" />
+	</settings>
+	
+</configuration>

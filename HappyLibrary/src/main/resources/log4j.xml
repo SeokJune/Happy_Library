@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- 콘솔로 로그를 출력하는 Appender 설정 -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<!-- 로그를 출력할 대상 (System.out) -->
+		<param name="Target" value="System.out" />
+		<!-- 로그의 출력 형식을 정의하는 레이아웃 설정 -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- 로그 메시지의 형식을 지정하는 패턴 -->
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 로그를 파일에 출력하는 RollingFileAppender 설정 -->
+	<appender name="file" class="org.apache.log4j.RollingFileAppender">
+		<!-- 로그 파일 경로 및 이름 -->
+		<param name="File" value="logs/application.log" />
+		<!-- 로그 파일의 최대 크기 설정 -->
+		<param name="MaxFileSize" value="10MB" />
+		<!-- 백업할 로그 파일의 최대 개수 설정 -->
+		<param name="MaxBackupIndex" value="10" />
+		<!-- 로그의 출력 형식을 정의하는 레이아웃 설정 -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- 로그 메시지의 형식을 지정하는 패턴 -->
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 컨트롤러 패키지의 로거 설정 -->
+	<logger name="kh.final_project.controllers">
+		<!-- 로그 레벨 설정 (info) -->
+		<level value="info" />
+	</logger>
+
+	<!-- 서비스 패키지의 로거 설정 -->
+	<logger name="kh.final_project.services">
+		<!-- 로그 레벨 설정 (info) -->
+		<level value="info" />
+	</logger>
+
+	<!-- DAO 패키지의 로거 설정 -->
+	<logger name="kh.final_project.daos">
+		<!-- 로그 레벨 설정 (info) -->
+		<level value="info" />
+	</logger>
+
+	<!-- MyBatis Mapper 패키지의 로거 설정 -->
+	<logger name="org.mybatis">
+		<!-- 로그 레벨 설정 (debug) -->
+		<level value="debug" />
+	</logger>
+
+	<!-- Spring 프레임워크의 로거 설정 -->
+	<logger name="org.springframework.core">
+		<!-- 로그 레벨 설정 (info) -->
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.beans">
+		<!-- 로그 레벨 설정 (info) -->
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.context">
+		<!-- 로그 레벨 설정 (info) -->
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<!-- 로그 레벨 설정 (info) -->
+		<level value="info" />
+	</logger>
+
+	<!-- 루트 로거 설정 -->
+	<root>
+		<!-- 로그 우선순위 설정 (warn) -->
+		<priority value="warn" />
+		<!-- 콘솔 Appender 참조 -->
+		<appender-ref ref="console" />
+		<!-- 파일 Appender 참조 -->
+		<appender-ref ref="file" />
+	</root>
+</log4j:configuration>

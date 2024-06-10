@@ -293,6 +293,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
-
-# End of https://www.toptal.com/developers/gitignore/api/windows,macos,eclipse,intellij,java,vue,vuejs
+# Additional files
+.idea/
+*.iml
+*.ipr
+*.iws
+*.swp
+.cache/

@@ -5,3 +5,4 @@
 - **JDK**: Java SE Development Kit 8 (JDK 8)
 - **Spring Framework**: Spring Framework 4.3.25
 - **Tomcat**: Apache Tomcat 9.0.89
+- **다이나믹 웹 모듈 버전**: 3.1

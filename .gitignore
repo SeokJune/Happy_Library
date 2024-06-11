@@ -4,6 +4,7 @@
 ### Tomcat & JDK Folder ###
 apache-tomcat-8.0.53/
 jdk1.8.0_181/
+
 ### Files & Folders ###
 newdeal2024/
 Servers/
@@ -300,3 +301,29 @@ $RECYCLE.BIN/
 *.iws
 *.swp
 .cache/
+
+### Additional Vite ###
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
